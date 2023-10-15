@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <button class="settings-button" onclick="openSettings()">
+      <img
+        src="https://assets.stickpng.com/images/6002fa8551c2ec00048c6c79.png"
+        alt="Settings Icon"
+      />
+    </button>
+    <button class="new-tab-button" onclick="createNewTab()">
+      <img
+        src="https://cdn0.iconfinder.com/data/icons/ui-16px-perfect-megapack-line/16/82_Add-512.png"
+        alt="Plus Icon"
+      />
+    </button>
+    <div class="tabs-container">
+      <div class="tabs">
+        <div class="tab active">
+          <div class="title">Tab 1</div>
+          <div class="close">×</div>
+        </div>
+        <div class="tab">
+          <div class="title">Tab 2</div>
+          <div class="close">×</div>
+        </div>
+        <div class="tab">
+          <div class="title">Tab 3</div>
+          <div class="close">×</div>
+        </div>
+      </div>
+      <div class="content">Content of Tab 1</div>
+    </div>
+
+    <script>
+      function openSettings() {
+        window.open("settings.html", "_blank", "width=600,height=400");
+      }
+
+      function toggleDarkMode() {
+        const body = document.querySelector("body");
+        body.classList.toggle("dark-mode");
+      }
+
+      const isDarkMode = localStorage.getItem("darkMode") === "true";
+
+      if (isDarkMode) {
+        toggleDarkMode();
+      }
+
+      function createNewTab() {
+        const tabsContainer = document.querySelector(".tabs");
+        const newTab = document.createElement("div");
+        newTab.classList.add("tab");
+        newTab.innerHTML = `
+        <div class="title">Tab ${tabsContainer.children.length + 1}</div>
+        <div class="close">×</div>
+      `;
+        tabsContainer.appendChild(newTab);
+        const tabs = document.querySelectorAll(".tab");
+        tabs.forEach((tab) => {
+          tab.addEventListener("click", () => {
+            tabs.forEach((tab) => tab.classList.remove("active"));
+            tab.classList.add("active");
+          });
+        });
+        const closeButtons = document.querySelectorAll(".close");
+        closeButtons.forEach((closeButton) => {
+          closeButton.addEventListener("click", (event) => {
+            event.stopPropagation();
+            closeButton.parentElement.remove();
+          });
+        });
+      }
+
+      const tabs = document.querySelectorAll(".tab");
+      tabs.forEach((tab) => {
+        tab.addEventListener("click", () => {
+          tabs.forEach((tab) => tab.classList.remove("active"));
+          tab.classList.add("active");
+        });
+      });
+
+      const closeButtons = document.querySelectorAll(".close");
+      closeButtons.forEach((closeButton) => {
+        closeButton.addEventListener("click", (event) => {
+          event.stopPropagation();
+          closeButton.parentElement.remove();
+        });
+      });
+    </script>
+  </body>
+</html>
