@@ -12,7 +12,9 @@ function createNewTab(Title, Cache) {
   const tabsContainer = document.querySelector(".tabs");
   const newTab = document.createElement("div");
   newTab.classList.add("tab");
-  if (Cache == null) { Cache = `No Content` }
+  if (Cache == null) { Cache = `<body>
+  <iframe id="iframe" src="messages.html"></iframe>
+</body>` }
   if (Title == null) { Title = `Tab ${tabsContainer.children.length + 1}` }
   const nice = Cache;
   Cache=null

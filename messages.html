@@ -17,14 +17,12 @@
         <!-- Sidebar content goes here -->
       </div>
       <div class="bottom-bar">
-        <input type="text" placeholder="Enter text to send here...">
-        <button>Send</button>
+        <input type="text" id="BBPT" placeholder="Enter text to send here..." onkeydown="checkEnterKey(event)">
+        <button onclick="send()">Send</button>
       </div>
     </aside>
     <main class="main-content">
-      <div class="message-bubble">
-        <p>Example message</p>
-      </div>
+
     </main>
   </div>
   <script src="messagesscript.js"></script>
