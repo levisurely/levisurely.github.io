@@ -2,7 +2,7 @@
 <html>
   <head>
     <title>Justice's Magic | Settings</title>
-    <link rel="icon" type="image/x-icon" href="https://raw.githubusercontent.com/skyallaround/ishortcutmsg/main/favicon.ico?token=GHSAT0AAAAAACHAOF53NDISXME3UWWWIAYOZJLMSIA">
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
     <link
       href="https://fonts.googleapis.com/css2?family=PT+Sans:wght@400;700&display=swap"
       rel="stylesheet"
@@ -23,33 +23,6 @@
       </div>
     </div>
 
-    <script>
-      const darkModeCheckbox = document.getElementById("darkModeCheckbox");
-      const isDarkMode = localStorage.getItem("darkMode") === "true";
-
-      if (isDarkMode) {
-        darkModeCheckbox.checked = true;
-        var linkElement = document.getElementById("stylesheet");
-        linkElement.href = "./settingsdark.css";
-      } else {
-        var linkElement = document.getElementById("stylesheet");
-        linkElement.href = "./settingslight.css";
-      }
-
-      darkModeCheckbox.addEventListener("change", () => {
-        document.documentElement.setAttribute(
-          "data-theme",
-          darkModeCheckbox.checked ? "dark" : "light"
-        );
-        localStorage.setItem("darkMode", darkModeCheckbox.checked);
-        if (darkModeCheckbox.checked) {
-          var linkElement = document.getElementById("stylesheet");
-          linkElement.href = "./settingsdark.css";
-        } else {
-          var linkElement = document.getElementById("stylesheet");
-          linkElement.href = "./settingslight.css";
-        }
-      });
-    </script>
+    <script src="settingsscript.js"></script>
   </body>
 </html>
