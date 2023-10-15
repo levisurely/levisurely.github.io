@@ -1,78 +1,15 @@
-body, h1, p {
-    margin: 0;
-    padding: 0;
-  }
-  
-  .container {
-    display: flex;
-    height: 100vh; /* Set container height to full viewport height */
-  }
-  
-  .sidebar {
-    background-color: #f2f2f2;
-    width: 300px;
-    overflow-y: scroll; /* Enable vertical scrolling */
-    padding-bottom: 60px; /* Adjust for bottom bar */
-  }
-  
-  .sidebar-header {
-    padding: 20px;
-  }
-  
-  .sidebar-content {
-    padding: 20px;
-  }
-  
-  .bottom-bar {
-    background-color: #f2f2f2;
-    position: fixed;
-    bottom: 0;
-    width: 100%;
-    height: 60px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 10px;
-    box-sizing: border-box;
-  }
-  
-  .bottom-bar input[type="text"] {
-    width: 80%;
-    padding: 5px;
-  }
-  
-  .bottom-bar button {
-    padding: 5px 10px;
-  }
-  
-  .main-content {
-    flex: 1;
-    background-color: #ffffff;
-  }
-  
-  .message-bubble {
-    background-color: #e1e1e1;
-    padding: 10px;
-    border-radius: 10px;
-    margin: 10px;
-    max-width: 80%;
-  }
-  
-  .message-bubble p {
-    margin: 0;
-  }
-
-  
-
-
-
-  
-  .tabs-container {
+.tabs-container {
     background-color: #f1f1f1;
     border-radius: 5px;
     margin: 10px;
     overflow: hidden;
   }
+
+  body, h1, p {
+    font-family: 'PT Sans', sans-serif;
+      margin: 0;
+      padding: 0;
+    }
   
   .tabs {
     display: flex;
@@ -166,7 +103,7 @@ body, h1, p {
     height: 16px;
   }
 
-  .settings-button {
+  .new-tab-button {
     position: absolute;
     top: 10px;
     right: 10px;
@@ -177,7 +114,7 @@ body, h1, p {
     cursor: pointer;
   }
 
-  .settings-button img {
+  .new-tab-button img {
     width: 16px;
     height: 16px;
   }

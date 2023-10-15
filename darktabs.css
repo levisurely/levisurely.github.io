@@ -1,0 +1,123 @@
+.tabs-container {
+    background-color: #333;
+    border-radius: 5px;
+    margin: 10px;
+    overflow: hidden;
+  }
+
+  body, h1, p {
+    font-family: 'PT Sans', sans-serif;
+    background-color: #151515;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .tabs {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    background-color: #333;
+    padding: 10px;
+  }
+  
+  .tab {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    background-color: #222;
+    border: 1px solid #555;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    padding: 5px 10px;
+    margin-right: 5px;
+    cursor: pointer;
+  }
+  
+  .tab.active {
+    background-color: #111;
+  }
+  
+  .tab .title {
+    margin-left: 5px;
+    color: #fff;
+  }
+  
+  .tab .close {
+    margin-left: 5px;
+    color: #999;
+    cursor: pointer;
+  }
+  
+  .content {
+    background-color: #222;
+    padding: 10px;
+    border: 1px solid #555;
+    border-top: none;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    color: #fff;
+  }
+  
+  .settings-button {
+    position: absolute;
+    top: 10px;
+    right: 60px;
+    background-color: #333;
+    border: none;
+    padding: 5px;
+    border-radius: 50%;
+    cursor: pointer;
+  }
+  
+  .settings-button img {
+    width: 16px;
+    height: 16px;
+  }
+  
+  .new-tab-button {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background-color: #333;
+    border: none;
+    padding: 5px;
+    border-radius: 50%;
+    cursor: pointer;
+  }
+  
+  .new-tab-button img {
+    width: 16px;
+    height: 16px;
+  }
+  
+  .settings-button {
+    position: absolute;
+    top: 10px;
+    right: 30px;
+    background-color: #333;
+    border: none;
+    padding: 5px;
+    border-radius: 50%;
+    cursor: pointer;
+  }
+  
+  .settings-button img {
+    width: 16px;
+    height: 16px;
+  }
+  
+  .new-tab-button {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background-color: #333;
+    border: none;
+    padding: 5px;
+    border-radius: 50%;
+    cursor: pointer;
+  }
+
+  .new-tab-button img {
+    width: 16px;
+    height: 16px;
+  }
