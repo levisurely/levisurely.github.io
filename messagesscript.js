@@ -30,11 +30,57 @@ function createNewSenderMsg(Msg) {
   msgsContainer.appendChild(newMsg);
 }
 
+function createNewSender(Person) {
+  const msgsContainer = document.getElementById("sidebar");
+  const newMsg = document.createElement("div");
+  newMsg.classList.add("sidebar-content");
+  if (Person == null) { Person = `{Error}` }
+  newMsg.innerHTML = `
+  <h2>${Person}</h2>
+  `;
+  msgsContainer.appendChild(newMsg);
+}
+
 //createNewMsg()
 //createNewSenderMsg()
+//createNewSender()
 
 function send() {
   var BBPT = document.getElementById("BBPT");
+  const token = 'API_TOKEN';
+  const gist_id = 'GIST_ID';
+
+  const headers = {
+    'Authorization': `token ${token}`
+  };
+
+  const content = `{
+    "Marie": {
+      "Sent": "false",
+      "Received": "false",
+      "Last": "Sent",
+      "Sending": "${BBPT.value}",
+      "Receiving": "Hello"
+    }
+  }
+  `
+
+  const data = {
+    files: {
+      [`Template`]: {
+        content: content
+      }
+    }
+  };
+
+  fetch(`https://api.github.com/gists/${gist_id}`, {
+    method: 'PATCH',
+    headers: headers,
+    body: JSON.stringify(data)
+  })
+    .then(response => response.json())
+    .then(data => console.log(data));
+
   createNewSenderMsg(BBPT.value);
 }
 
