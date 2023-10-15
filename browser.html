@@ -2,7 +2,7 @@
 <html>
   <head>
     <link href="https://fonts.googleapis.com/css2?family=PT+Sans:wght@400;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="darktabs.css" />
+    <link  id="stylesheet" rel="stylesheet" href="lighttabs.css" />
   </head>
   <body>
     <button class="settings-button" onclick="openSettings()">
@@ -34,63 +34,6 @@
       </div>
       <div class="content">Content of Tab 1</div>
     </div>
-
-    <script>
-      function openSettings() {
-        window.open("settings.html", "_blank", "width=600,height=400");
-      }
-
-      function toggleDarkMode() {
-        const body = document.querySelector("body");
-        body.classList.toggle("dark-mode");
-      }
-
-      const isDarkMode = localStorage.getItem("darkMode") === "true";
-
-      if (isDarkMode) {
-        toggleDarkMode();
-      }
-
-      function createNewTab() {
-        const tabsContainer = document.querySelector(".tabs");
-        const newTab = document.createElement("div");
-        newTab.classList.add("tab");
-        newTab.innerHTML = `
-        <div class="title">Tab ${tabsContainer.children.length + 1}</div>
-        <div class="close">×</div>
-      `;
-        tabsContainer.appendChild(newTab);
-        const tabs = document.querySelectorAll(".tab");
-        tabs.forEach((tab) => {
-          tab.addEventListener("click", () => {
-            tabs.forEach((tab) => tab.classList.remove("active"));
-            tab.classList.add("active");
-          });
-        });
-        const closeButtons = document.querySelectorAll(".close");
-        closeButtons.forEach((closeButton) => {
-          closeButton.addEventListener("click", (event) => {
-            event.stopPropagation();
-            closeButton.parentElement.remove();
-          });
-        });
-      }
-
-      const tabs = document.querySelectorAll(".tab");
-      tabs.forEach((tab) => {
-        tab.addEventListener("click", () => {
-          tabs.forEach((tab) => tab.classList.remove("active"));
-          tab.classList.add("active");
-        });
-      });
-
-      const closeButtons = document.querySelectorAll(".close");
-      closeButtons.forEach((closeButton) => {
-        closeButton.addEventListener("click", (event) => {
-          event.stopPropagation();
-          closeButton.parentElement.remove();
-        });
-      });
-    </script>
+    <script src="browerscript.js"></script>
   </body>
 </html>

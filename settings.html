@@ -1,30 +1,53 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <link href="https://fonts.googleapis.com/css2?family=PT+Sans:wght@400;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" type="text/css" href="./settingsdark.css">
-</head>
-<body>
-  <div class="container">
-    <h1>Settings</h1>
-    <div class="option">
-      <input type="checkbox" id="darkModeCheckbox">
-      <label for="darkModeCheckbox">Dark Mode</label>
+  <head>
+    <link
+      href="https://fonts.googleapis.com/css2?family=PT+Sans:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      id="stylesheet"
+      rel="stylesheet"
+      type="text/css"
+      href="./settingslight.css"
+    />
+  </head>
+  <body>
+    <div class="container">
+      <h1>Settings</h1>
+      <div class="option">
+        <input type="checkbox" id="darkModeCheckbox" />
+        <label for="darkModeCheckbox">Dark Mode</label>
+      </div>
     </div>
-  </div>
 
-  <script>
-    const darkModeCheckbox = document.getElementById('darkModeCheckbox');
-    const isDarkMode = localStorage.getItem('darkMode') === 'true';
+    <script>
+      const darkModeCheckbox = document.getElementById("darkModeCheckbox");
+      const isDarkMode = localStorage.getItem("darkMode") === "true";
 
-    if (isDarkMode) {
-      darkModeCheckbox.checked = true;
-    }
+      if (isDarkMode) {
+        darkModeCheckbox.checked = true;
+        var linkElement = document.getElementById("stylesheet");
+        linkElement.href = "./settingsdark.css";
+      } else {
+        var linkElement = document.getElementById("stylesheet");
+        linkElement.href = "./settingslight.css";
+      }
 
-    darkModeCheckbox.addEventListener('change', () => {
-      document.documentElement.setAttribute('data-theme', darkModeCheckbox.checked ? 'dark' : 'light');
-      localStorage.setItem('darkMode', darkModeCheckbox.checked);
-    });
-  </script>
-</body>
+      darkModeCheckbox.addEventListener("change", () => {
+        document.documentElement.setAttribute(
+          "data-theme",
+          darkModeCheckbox.checked ? "dark" : "light"
+        );
+        localStorage.setItem("darkMode", darkModeCheckbox.checked);
+        if (darkModeCheckbox.checked) {
+          var linkElement = document.getElementById("stylesheet");
+          linkElement.href = "./settingsdark.css";
+        } else {
+          var linkElement = document.getElementById("stylesheet");
+          linkElement.href = "./settingslight.css";
+        }
+      });
+    </script>
+  </body>
 </html>
