@@ -1,35 +1,38 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>Justice's Magic</title>
-    <link rel="icon" type="image/x-icon" href="favicon.ico">
-    <link href="https://fonts.googleapis.com/css2?family=PT+Sans:wght@400;700&display=swap" rel="stylesheet">
-    <link  id="stylesheet" rel="stylesheet" href="lighttabs.css" />
-  </head>
-  <body>
-    <button class="settings-button" onclick="openSettings()">
-      <img
-        src="settings_icon.png"
-        alt="Settings Icon"
-      />
-    </button>
-    <button class="new-tab-button" onclick="createNewTab()">
-      <img
-        src="nt.png"
-        alt="Plus Icon"
-      />
-    </button>
-    <div class="tabs-container">
-      <div class="tabs">
-
-      </div>
-      <div class="content" id="display">
-
-        <body>
-          <iframe id="iframe" src="messages.html"></iframe>
-        </body>
-        </div>
+<head>
+  <title>Justice's Magic | Browser</title>
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <link href="https://fonts.googleapis.com/css2?family=PT+Sans:wght@400;700&display=swap" rel="stylesheet">
+  <link id="stylesheet" rel="stylesheet" href="lighttabs.css" />
+</head>
+<body>
+  <div class="navigation-buttons">
+    <button onclick="history.back()">Back</button>
+    <button onclick="history.forward()">Forward</button>
+    <button onclick="location.reload()">Reload</button>
+  </div>
+  <div class="tabs-container">
+    <div class="tabs"></div>
+    <div class="search-bar">
+      <button class="bookmark-button" onclick="bookmarkPage()">
+        <img src="bookmark_icon.png" alt="Bookmark Icon" />
+      </button>
+      <input type="text" id="search-input" placeholder="Search...">
     </div>
-    <script src="browerscript.js"></script>
-  </body>
+    <div class="content" id="display">
+      <!-- Content goes here -->
+    </div>
+  </div>
+  <div class="bookmark-bar">
+    <!-- Add your bookmark bar content here -->
+  </div>
+  <button class="settings-button" onclick="openSettings()">
+    <img src="settings_icon.png" alt="Settings Icon" />
+  </button>
+  <button class="new-tab-button" onclick="createNewTab()">
+    <img src="nt.png" alt="Plus Icon" />
+  </button>
+  <script src="browerscript.js"></script>
+</body>
 </html>

@@ -1,0 +1,54 @@
+.container {
+    max-width: 400px;
+    margin: 0 auto;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@100;200;300;400;500;600;700&family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap');
+#background-video {
+width: 100vw;
+height: 100vh;
+object-fit: cover;
+position: fixed;
+left: 0;
+right: 0;
+top: 0;
+bottom: 0;
+z-index: -32767;
+filter: brightness(50%) blur(2px);
+}
+* {color-scheme:dark;}
+
+container {z-index:4;}
+ body,html {font-family: "Inter", sans-serif !important;}
+ h1,h2,h3,h4,h5,h6,p,span,div,container {font-family: "Inter", sans-serif !important;}
+ pre, code {font-family: "IBM Plex Mono", monospace !important;}
+
+h1 {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+input[type="password"] {
+    border-radius: 25px;
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+
+button {
+    border-radius: 25px;
+    padding: 10px 20px;
+    border: none;
+}
+
+#errorMessage {
+    border-radius: 5px;
+    color: red;
+    margin-top: 10px;
+}

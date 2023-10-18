@@ -1,0 +1,81 @@
+body {
+  font-family: 'PT Sans', sans-serif;
+}
+
+h1 {
+  text-align: center;
+}
+
+#extensionsContainer {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+#extensionsContainer > * {
+  margin: 5px;
+}
+
+.extension {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+  width: 398px;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.icon {
+  border-radius: 5px;
+  width: 50px;
+  height: 50px;
+  margin-right: 10px;
+}
+
+.content {
+  flex-grow: 1;
+}
+
+h2 {
+  margin-bottom: 10px;
+}
+
+.codeContainer {
+  display: none;
+  margin-top: 10px;
+}
+
+.codeContainer.active {
+  display: block;
+}
+
+.codeInput {
+  width: 100%;
+  height: 100px;
+  resize: vertical;
+}
+
+.buttonContainer {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 10px;
+}
+
+button {
+  padding: 5px 10px;
+  margin-left: 10px;
+}
+
+.toggleButton {
+  border: none;
+  border-radius: 5px;
+  background-color: green;
+  color: white;
+}
+
+.toggleButton.disabled {
+  background-color: red;
+  border-radius: 5px;
+}

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>URL Subdomain Shuffler</title>
+    <script>
+      function shuffleSubdomain() {
+        // Get the input URL
+        var inputUrl = document.getElementById("inputUrl").value;
+        
+        // Split the URL into parts
+        var parts = inputUrl.split(".");
+        
+        // Shuffle the subdomain part
+        var subdomain = parts[0].split("");
+        for (var i = subdomain.length - 1; i > 0; i--) {
+          var j = Math.floor(Math.random() * (i + 1));
+          var temp = subdomain[i];
+          subdomain[i] = subdomain[j];
+          subdomain[j] = temp;
+        }
+        
+        // Join the subdomain back into a string
+        var shuffledSubdomain = subdomain.join("");
+        
+        // Reconstruct the URL with the shuffled subdomain
+        var shuffledUrl = shuffledSubdomain + "." + parts.slice(1).join(".");
+        
+        // Display the shuffled URL
+        document.getElementById("shuffledUrl").textContent = shuffledUrl;
+      }
+    </script>
+  </head>
+  <body>
+    <h1>URL Subdomain Shuffler</h1>
+    <input type="text" id="inputUrl" placeholder="Enter URL" />
+    <button onclick="shuffleSubdomain()">Shuffle Subdomain</button>
+    <p id="shuffledUrl"></p>
+  </body>
+</html>

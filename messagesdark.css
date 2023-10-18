@@ -3,6 +3,9 @@ body, h1, p {
     margin: 0;
     padding: 0;
     color: #fff;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
   }
   
   .container {

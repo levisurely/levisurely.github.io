@@ -18,8 +18,25 @@
     <div class="container">
       <h1>Settings</h1>
       <div class="option">
+        <label for="darkModeCheckbox">Dark Mode:</label>
         <input type="checkbox" id="darkModeCheckbox" />
-        <label for="darkModeCheckbox">Dark Mode</label>
+      </div>
+      <div class="option">
+        <label for="backgroundColor">Background Color:</label>
+        <input type="color" id="backgroundColor" />
+      </div>
+      <div class="option">
+        <label for="backgroundImage">Background Image:</label>
+        <input type="radio" id="backgroundImageChoiceURL" name="backgroundImageChoice" value="url" checked>
+        <label for="backgroundImageChoiceURL">URL</label>
+        <input type="radio" id="backgroundImageChoiceFile" name="backgroundImageChoice" value="file">
+        <label for="backgroundImageChoiceFile">Select File</label>
+        <input type="text" id="backgroundImageURL" placeholder="Enter image URL" />
+        <input type="file" id="backgroundImageFile" accept="image/*" style="display: none" />
+      </div>
+      <div class="option">
+        <label for="backgroundImageTransparency">Background Image Transparency:</label>
+        <input type="range" id="backgroundImageTransparency" min="0" max="1" step="0.1" />
       </div>
     </div>
 
