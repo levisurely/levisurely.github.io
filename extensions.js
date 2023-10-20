@@ -48,6 +48,49 @@ document.querySelectorAll(".extension").forEach(function(extension) {
     });
   });
 
+  document.addEventListener("DOMContentLoaded", function() {
+
+
+    let savedSettings = JSON.parse(localStorage.getItem("settings")) || {};
+    var darkModeCheckbox = savedSettings.darkMode || false;
+    var backgroundColorInput = savedSettings.backgroundColor || "#ffffff";
+    var backgroundImageURLInput = savedSettings.backgroundImageURL || "";
+    var backgroundImageFileInput = "";
+    var backgroundImageTransparencyInput = savedSettings.backgroundImageTransparency || "1";
+  
+    // Apply settings function
+    function applySettings() {
+      // Dark mode
+      const darkModeEnabled = darkModeCheckbox.checked;
+      const stylesheet = document.getElementById("stylesheet");
+      stylesheet.href = darkModeEnabled ? "./extensionsdark.css" : "./extensionsdark.css";
+      savedSettings.darkMode = darkModeEnabled;
+  
+      // Background color
+      const backgroundColor = backgroundColorInput;
+      document.body.style.backgroundColor = backgroundColor;
+      savedSettings.backgroundColor = backgroundColor;
+  
+      // Background image
+      if (backgroundImageURLInput) {
+        const backgroundImageURL = backgroundImageURLInput;
+        document.body.style.backgroundImage = `url("${backgroundImageURL}")`;
+        savedSettings.backgroundImageURL = backgroundImageURL;
+      }
+  
+      // Background image transparency
+      const transparency = backgroundImageTransparencyInput;
+      document.body.style.opacity = transparency;
+      savedSettings.backgroundImageTransparency = transparency;
+  
+      // Save settings
+      localStorage.setItem("settings", JSON.stringify(savedSettings));
+    }
+  
+    // Apply settings on page load
+    applySettings();
+  });
+  
   function checkCookie() {
     var cookieName = "accessKey";
     var keyPage = "key.html";

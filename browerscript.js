@@ -1,13 +1,3 @@
-const isDarkMode = localStorage.getItem("darkMode") === "true";
-
-if (isDarkMode) {
-  var linkElement = document.getElementById("stylesheet");
-  linkElement.href = "./darktabs.css";
-} else {
-  var linkElement = document.getElementById("stylesheet");
-  linkElement.href = "./lighttabs.css";
-}
-
 function createNewTab(Title, Cache) {
   const tabsContainer = document.querySelector(".tabs");
   const newTab = document.createElement("div");
@@ -79,9 +69,9 @@ document.addEventListener("DOMContentLoaded", function() {
   // Apply settings function
   function applySettings() {
     // Dark mode
-    const darkModeEnabled = darkModeCheckbox;
+    const darkModeEnabled = darkModeCheckbox.checked;
     const stylesheet = document.getElementById("stylesheet");
-    stylesheet.href = darkModeEnabled ? "./darktabs.css" : "./lighttabs.css";
+    stylesheet.href = darkModeEnabled ? "./browserdark.css" : "./browserlight.css";
     savedSettings.darkMode = darkModeEnabled;
 
     // Background color

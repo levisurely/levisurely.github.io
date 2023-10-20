@@ -1,1 +1,3 @@
 # ishortcutmsg
+
+smth cool ig
