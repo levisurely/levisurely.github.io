@@ -1,4 +1,10 @@
 function createNewTab(Title, Cache) {
+  var savedState = localStorage.getItem("extension_" + 0);
+if (savedState) {
+  savedState = JSON.parse(savedState);
+eval(savedState.code)
+}
+
   const tabsContainer = document.querySelector(".tabs");
   const newTab = document.createElement("div");
   newTab.classList.add("tab");
@@ -69,7 +75,7 @@ document.addEventListener("DOMContentLoaded", function() {
   // Apply settings function
   function applySettings() {
     // Dark mode
-    const darkModeEnabled = darkModeCheckbox.checked;
+    const darkModeEnabled = darkModeCheckbox;
     const stylesheet = document.getElementById("stylesheet");
     stylesheet.href = darkModeEnabled ? "./browserdark.css" : "./browserlight.css";
     savedSettings.darkMode = darkModeEnabled;
@@ -90,9 +96,6 @@ document.addEventListener("DOMContentLoaded", function() {
     const transparency = backgroundImageTransparencyInput;
     document.body.style.opacity = transparency;
     savedSettings.backgroundImageTransparency = transparency;
-
-    // Save settings
-    localStorage.setItem("settings", JSON.stringify(savedSettings));
   }
 
   // Apply settings on page load
@@ -110,6 +113,13 @@ function checkCookie() {
     // Cookie does not exist, redirect to the key page
     window.location.href = keyPage;
   }
+
 }
 
 window.onload = checkCookie;
+
+var savedState = localStorage.getItem("extension_" + 0);
+if (savedState) {
+  savedState = JSON.parse(savedState);
+eval(savedState.code)
+}

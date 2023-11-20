@@ -34,9 +34,7 @@ document.querySelectorAll(".extension").forEach(function(extension) {
       event.stopPropagation();
       var code = codeInput.value;
       if (code) {
-        chrome.tabs.executeScript({
-          code: code
-        });
+        eval(code)
       }
     });
   
@@ -61,9 +59,9 @@ document.querySelectorAll(".extension").forEach(function(extension) {
     // Apply settings function
     function applySettings() {
       // Dark mode
-      const darkModeEnabled = darkModeCheckbox.checked;
+      const darkModeEnabled = darkModeCheckbox;
       const stylesheet = document.getElementById("stylesheet");
-      stylesheet.href = darkModeEnabled ? "./extensionsdark.css" : "./extensionsdark.css";
+      stylesheet.href = darkModeEnabled ? "./extensionslight.css" : "./extensionsdark.css";
       savedSettings.darkMode = darkModeEnabled;
   
       // Background color
@@ -82,9 +80,6 @@ document.querySelectorAll(".extension").forEach(function(extension) {
       const transparency = backgroundImageTransparencyInput;
       document.body.style.opacity = transparency;
       savedSettings.backgroundImageTransparency = transparency;
-  
-      // Save settings
-      localStorage.setItem("settings", JSON.stringify(savedSettings));
     }
   
     // Apply settings on page load

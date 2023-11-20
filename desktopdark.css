@@ -1,0 +1,68 @@
+.toolbar {
+    background-color: #ffffff;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+
+  body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    color: #fff;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+  
+  .start-button {
+    background-color: #ffffff;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: 1px solid #c5c5c5;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    cursor: pointer;
+  }
+  
+  .menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 200px;
+    height: 200px;
+    background-color: #ffffff;
+    border: 1px solid #c5c5c5;
+    display: none;
+  }
+  
+  .start-button:hover .menu {
+    display: block;
+  }
+  
+  .toolbar-icons {
+    display: flex;
+    flex-grow: 1;
+    justify-content: center;
+    gap: 10px;
+  }
+  
+  .icon {
+    background-color: #ffffff;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    border: 1px solid #c5c5c5;
+  }
+  
+  .time-display {
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+    color: #000000;
+  }

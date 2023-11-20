@@ -69,7 +69,7 @@ function updateTime() {
     // Apply settings function
     function applySettings() {
       // Dark mode
-      const darkModeEnabled = darkModeCheckbox.checked;
+      const darkModeEnabled = darkModeCheckbox;
       const stylesheet = document.getElementById("stylesheet");
       stylesheet.href = darkModeEnabled ? "./desktopdark.css" : "./desktopdark.css";
       savedSettings.darkMode = darkModeEnabled;
@@ -90,9 +90,6 @@ function updateTime() {
       const transparency = backgroundImageTransparencyInput;
       document.body.style.opacity = transparency;
       savedSettings.backgroundImageTransparency = transparency;
-  
-      // Save settings
-      localStorage.setItem("settings", JSON.stringify(savedSettings));
     }
   
     // Apply settings on page load

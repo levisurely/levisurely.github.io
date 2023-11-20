@@ -93,7 +93,7 @@ document.addEventListener("DOMContentLoaded", function() {
   // Apply settings function
   function applySettings() {
     // Dark mode
-    const darkModeEnabled = darkModeCheckbox.checked;
+    const darkModeEnabled = darkModeCheckbox;
     const stylesheet = document.getElementById("stylesheet");
     stylesheet.href = darkModeEnabled ? "./messagesdark.css" : "./messageslight.css";
     savedSettings.darkMode = darkModeEnabled;
@@ -114,9 +114,6 @@ document.addEventListener("DOMContentLoaded", function() {
     const transparency = backgroundImageTransparencyInput;
     document.body.style.opacity = transparency;
     savedSettings.backgroundImageTransparency = transparency;
-
-    // Save settings
-    localStorage.setItem("settings", JSON.stringify(savedSettings));
   }
 
   // Apply settings on page load
