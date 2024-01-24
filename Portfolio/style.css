@@ -1,0 +1,87 @@
+body {
+    background: url(fireworks.gif) fixed;
+    background-size: cover;
+  }
+  
+  header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 10px;
+    animation: glowing 2s infinite;
+  }
+  
+  @keyframes glowing {
+    0% {
+      box-shadow: 0 0 5px #fff;
+    }
+    50% {
+      box-shadow: 0 0 20px #fff;
+    }
+    100% {
+      box-shadow: 0 0 5px #fff;
+    }
+  }
+  
+  h1 {
+    color: white;
+    font-size: 30px;
+    transition: color 0.5s;
+  }
+  
+  h1:hover {
+    color: yellow;
+  }
+  
+  nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+  }
+  
+  nav ul li {
+    display: inline;
+    margin-right: 10px;
+  }
+  
+  nav ul li a {
+    color: white;
+    text-decoration: none;
+    transition: color 0.5s;
+  }
+  
+  nav ul li a:hover {
+    color: yellow;
+  }
+  
+  section {
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 20px;
+    margin-top: 100px;
+    opacity: 0;
+    transform: translateY(50px);
+    transition: opacity 0.5s, transform 0.5s;
+  }
+  
+  section.active {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  
+  img {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    animation: rotate 4s infinite linear;
+  }
+  
+  @keyframes rotate {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+}

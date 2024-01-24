@@ -9,7 +9,7 @@ document.getElementById("submitBtn").addEventListener("click", function(event) {
         var expirationDate = new Date();
         expirationDate.setDate(expirationDate.getDate() + 1);
         document.cookie = cookieName + "=" + validKey + "; expires=" + expirationDate.toUTCString() + "; path=/";
-        window.location.href = "browser.html";
+        window.location.href = "browser";
     } else {
         document.getElementById("errorMessage").innerHTML = "Invalid key. Please try again.";
     }
@@ -17,11 +17,11 @@ document.getElementById("submitBtn").addEventListener("click", function(event) {
 
 function checkCookie() {
     var cookieName = "accessKey";
-    var keyPage = "key.html";
+    var keyPage = "key";
     
     if (document.cookie.indexOf(cookieName) >= 0) {
       // Cookie exists, redirect to the main page
-      window.location.href = "browser.html";
+      window.location.href = "browser";
     } else {
       // Cookie does not exist, redirect to the key page
      // window.location.href = keyPage;

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" type="text/css" href="style.css">
+  <script src="script.js"></script>
+</head>
+<body>
+  <header>
+    <h1>My Portfolio</h1>
+    <nav>
+      <ul>
+        <li><a href="#about" onclick="scrollToSection('about')">About</a></li>
+        <li><a href="#projects" onclick="scrollToSection('projects')">Projects</a></li>
+        <li><a href="#contact" onclick="scrollToSection('contact')">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section id="about">
+    <h2>About Me</h2>
+    <img src="profile-picture.jpg" alt="Profile Picture">
+    <p>Insert your bio here.</p>
+  </section>
+
+  <section id="projects">
+    <h2>Projects</h2>
+    <!-- Add your projects here -->
+  </section>
+
+  <section id="contact">
+    <h2>Contact</h2>
+    <!-- Add your contact details here -->
+  </section>
+
+  <script>
+    function scrollToSection(sectionId) {
+      const section = document.getElementById(sectionId);
+      section.scrollIntoView({ behavior: 'smooth' });
+    }
+  </script>
+</body>
+</html>

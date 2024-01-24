@@ -64,11 +64,11 @@ document.addEventListener("DOMContentLoaded", function() {
 
 function checkCookie() {
   var cookieName = "accessKey";
-  var keyPage = "key.html";
+  var keyPage = "key";
   
   if (document.cookie.indexOf(cookieName) >= 0) {
     // Cookie exists, redirect to the main page
-    //window.location.href = "main.html";
+    //window.location.href = "main";
   } else {
     // Cookie does not exist, redirect to the key page
     window.location.href = keyPage;

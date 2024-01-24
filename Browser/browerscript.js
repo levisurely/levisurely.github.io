@@ -9,7 +9,7 @@ eval(savedState.code)
   const newTab = document.createElement("div");
   newTab.classList.add("tab");
   if (Cache == null) { Cache = `<body>
-  <iframe id="iframe" src="messages.html"></iframe>
+  <iframe id="iframe" src="messages"></iframe>
 </body>` }
   if (Title == null) { Title = `Tab ${tabsContainer.children.length + 1}` }
   const nice = Cache;
@@ -40,9 +40,9 @@ eval(savedState.code)
 createNewTab();
 
 function openSettings() {
-  //window.open("settings.html", "_blank", "width=600,height=400");
+  //window.open("settings", "_blank", "width=600,height=400");
   createNewTab("Settings", `        <body>
-    <iframe id="iframe" src="settings.html"></iframe>
+    <iframe id="iframe" src="settings"></iframe>
   </body>`)
 }
 
@@ -104,11 +104,11 @@ document.addEventListener("DOMContentLoaded", function() {
 
 function checkCookie() {
   var cookieName = "accessKey";
-  var keyPage = "key.html";
+  var keyPage = "key";
   
   if (document.cookie.indexOf(cookieName) >= 0) {
     // Cookie exists, redirect to the main page
-    //window.location.href = "main.html";
+    //window.location.href = "main";
   } else {
     // Cookie does not exist, redirect to the key page
     window.location.href = keyPage;
