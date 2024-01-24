@@ -1,3 +1,3 @@
-# ishortcutmsg
+# Justice's Magic
 
-smth cool ig
+made for my friend named justice yk lil cool site
