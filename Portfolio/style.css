@@ -1,9 +1,16 @@
-body {
-    background: url(fireworks.gif) fixed;
-    background-size: cover;
-  }
+  body {
+    font-family: 'PT Sans', sans-serif;
+      margin: 0;
+      padding: 0;
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center;
+      background-color: black;
+      background-image: url("https://png.pngtree.com/png-clipart/20220215/ourmid/pngtree-bottom-black-shadow-overlay-gradient-png-image_4389699.png");
+    }
   
   header {
+    z-index: 99999;
     position: fixed;
     top: 0;
     left: 0;
@@ -12,6 +19,22 @@ body {
     padding: 10px;
     animation: glowing 2s infinite;
   }
+
+  a {text-decoration: none; font-weight: bold;}
+
+  #roblox {color: red; text-shadow: 0 0 10px red;}
+
+  #twitter {color: rgb(0, 145, 255); text-shadow: 0 0 10px rgb(0, 145, 255);}
+
+  #guilded {color: yellow; text-shadow: 0 0 10px yellow;}
+
+  #github {color: white; text-shadow: 0 0 10px white;}
+
+  #discord {color:rgb(114,137,218); text-shadow: 0 0 10px rgb(114,137,218);}
+
+  #projects {color: white;}
+
+  #contact {color: white;}
   
   @keyframes glowing {
     0% {
@@ -27,14 +50,9 @@ body {
   
   h1 {
     color: white;
-    font-size: 30px;
+    font-size: 20px;
     transition: color 0.5s;
   }
-  
-  h1:hover {
-    color: yellow;
-  }
-  
   nav ul {
     list-style-type: none;
     margin: 0;
@@ -57,10 +75,10 @@ body {
   }
   
   section {
-    background-color: rgba(255, 255, 255, 0.8);
+    background-color: rgba(255, 255, 255, 0);
     padding: 20px;
     margin-top: 100px;
-    opacity: 0;
+    opacity: 1;
     transform: translateY(50px);
     transition: opacity 0.5s, transform 0.5s;
   }

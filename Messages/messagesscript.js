@@ -122,7 +122,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
 function checkCookie() {
   var cookieName = "accessKey";
-  var keyPage = "key";
+  var keyPage = "../Key";;
   
   if (document.cookie.indexOf(cookieName) >= 0) {
     // Cookie exists, redirect to the main page

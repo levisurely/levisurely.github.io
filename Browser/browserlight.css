@@ -66,6 +66,17 @@
     border-bottom-left-radius: 5px;
     border-bottom-right-radius: 5px;
   }
+
+  .bookmark-button {
+    position: absolute;
+    top: 10px;
+    right: 60px;
+    background-color: #f1f1f1;
+    border: none;
+    padding: 5px;
+    border-radius: 50%;
+    cursor: pointer;
+  }
   
   .settings-button {
     position: absolute;
