@@ -1,3 +1,3 @@
-# Justice's Magic
+# Skybridge
 
-made for my friend named justice yk lil cool site
+lil cool site
