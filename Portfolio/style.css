@@ -1,14 +1,27 @@
   body {
     font-family: 'PT Sans', sans-serif;
-      margin: 0;
-      padding: 0;
-      background-size: cover;
-      background-repeat: no-repeat;
-      background-position: center;
-      background-color: black;
-      background-image: url("https://png.pngtree.com/png-clipart/20220215/ourmid/pngtree-bottom-black-shadow-overlay-gradient-png-image_4389699.png");
-    }
-  
+    margin: 0;
+    padding: 0;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-color: black;
+    background-image: url("https://png.pngtree.com/png-clipart/20220215/ourmid/pngtree-bottom-black-shadow-overlay-gradient-png-image_4389699.png");
+  }
+
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    grid-gap: 20px;
+    align-items: stretch;
+  }
+
+  .grid img {
+    border: 1px solid #ccc;
+    box-shadow: 2px 2px 6px 0px rgba(0, 0, 0, 0.3);
+    max-width: 100%;
+  }
+
   header {
     z-index: 99999;
     position: fixed;
@@ -20,60 +33,85 @@
     animation: glowing 2s infinite;
   }
 
-  a {text-decoration: none; font-weight: bold;}
+  a {
+    text-decoration: none;
+    font-weight: bold;
+  }
 
-  #roblox {color: red; text-shadow: 0 0 10px red;}
+  #roblox {
+    color: red;
+    text-shadow: 0 0 10px red;
+  }
 
-  #twitter {color: rgb(0, 145, 255); text-shadow: 0 0 10px rgb(0, 145, 255);}
+  #twitter {
+    color: rgb(0, 145, 255);
+    text-shadow: 0 0 10px rgb(0, 145, 255);
+  }
 
-  #guilded {color: yellow; text-shadow: 0 0 10px yellow;}
+  #guilded {
+    color: yellow;
+    text-shadow: 0 0 10px yellow;
+  }
 
-  #github {color: white; text-shadow: 0 0 10px white;}
+  #github {
+    color: white;
+    text-shadow: 0 0 10px white;
+  }
 
-  #discord {color:rgb(114,137,218); text-shadow: 0 0 10px rgb(114,137,218);}
+  #discord {
+    color: rgb(114, 137, 218);
+    text-shadow: 0 0 10px rgb(114, 137, 218);
+  }
 
-  #projects {color: white;}
+  #projects {
+    color: white;
+  }
 
-  #contact {color: white;}
-  
+  #contact {
+    color: white;
+  }
+
   @keyframes glowing {
     0% {
       box-shadow: 0 0 5px #fff;
     }
+
     50% {
       box-shadow: 0 0 20px #fff;
     }
+
     100% {
       box-shadow: 0 0 5px #fff;
     }
   }
-  
+
   h1 {
     color: white;
     font-size: 20px;
     transition: color 0.5s;
   }
+
   nav ul {
     list-style-type: none;
     margin: 0;
     padding: 0;
   }
-  
+
   nav ul li {
     display: inline;
     margin-right: 10px;
   }
-  
+
   nav ul li a {
     color: white;
     text-decoration: none;
     transition: color 0.5s;
   }
-  
+
   nav ul li a:hover {
     color: yellow;
   }
-  
+
   section {
     background-color: rgba(255, 255, 255, 0);
     padding: 20px;
@@ -82,24 +120,25 @@
     transform: translateY(50px);
     transition: opacity 0.5s, transform 0.5s;
   }
-  
+
   section.active {
     opacity: 1;
     transform: translateY(0);
   }
-  
-  img {
+
+  #pfp {
     width: 200px;
     height: 200px;
     border-radius: 50%;
     animation: rotate 4s infinite linear;
   }
-  
+
   @keyframes rotate {
     0% {
       transform: rotate(0deg);
     }
+
     100% {
       transform: rotate(360deg);
     }
-}
+  }
