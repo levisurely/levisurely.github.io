@@ -93,10 +93,17 @@ function setupWindowButtons(windowElement) {
     });
 
     maximizeButton.addEventListener('click', () => {
-        windowElement.style.width = '100%';
-        windowElement.style.height = '100%';
-        windowElement.style.top = 0;
-        windowElement.style.left = 0;
+        if (windowElement.style.width !== '100%') {
+            windowElement.style.width = '100%';
+            windowElement.style.height = '100%';
+            windowElement.style.top = 0;
+            windowElement.style.left = 0;
+        } else {
+            windowElement.style.width = '400px';
+            windowElement.style.height = '300px';
+            windowElement.style.top = '50px';
+            windowElement.style.left = '50px';
+        }
     });
 }
 
@@ -122,5 +129,9 @@ function setupWindowTabs(windowElement, Title) {
 }
 
 addWindowButton.addEventListener('click', function () {
-    createWindow("https://magic.is-a.dev/", "Test");
+    const textBoxValue = document.getElementById('textBox').value;
+    const baseUrl = textBoxValue.replace(/^https:\/\//, "").replace(/\/$/, "");
+    createWindow(`${textBoxValue}`, `???`);
 });
+
+var script = document.createElement('script'); script.src="https://cdn.jsdelivr.net/npm/eruda"; document.body.append(script); script.onload = function () { eruda.init(); }
