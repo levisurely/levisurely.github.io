@@ -38,6 +38,7 @@ input[type="text"] {
 }
 
 .topbar {
+  z-index: 2;
   display: flex;
   backdrop-filter: blur(10px);
   justify-content: flex-end;
@@ -80,9 +81,22 @@ input[type="text"] {
 }
 
 iframe {
+  z-index: 1;
   border: none;
   width: 100%;
   height: 100%;
+}
+
+#toggle {
+  display: inline-block;
+  margin-right: 5px;
+  color: #fff;
+  backdrop-filter: blur(10px);
+  background-color: rgba(255, 0, 0, 0.5);
+  padding: 5px;
+  border-style: none;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
 }
 
 #addWindow {

@@ -1,7 +1,9 @@
 let zIndex = 1;
 let windows = document.getElementById('windows');
 let tabsHolder = document.getElementById('tabsHolder');
+let PT = document.getElementById('toggle');
 let addWindowButton = document.getElementById('addWindow');
+var Proxy = false;
 
 const iFrames = [...document.querySelectorAll("iframe[bypass-x-frame]")];
 const bypassAPILink = "https://basicscript.glitch.me/bypass/";
@@ -34,19 +36,14 @@ function createWindow(Src, Title) {
   `;
 
     windowElement.appendChild(topbar);
-
-
+if (Proxy==true){
+    windowElement.innerHTML += `<iframe id="myframe" src="${bypassAPILink+Src}"></iframe>`
+}else{windowElement.innerHTML += `<iframe id="myframe" src="${Src}"></iframe>`}
     windows.appendChild(windowElement);
 
     makeDraggable(windowElement);
     setupWindowButtons(windowElement);
     setupWindowTabs(windowElement, Title);
-
-    windowElement.innerHTML += `<iframe id="myframe" bypass-x-frame="${Src}"></iframe>`
-    const frame = document.getElementById("myframe")
-    let link = frame.getAttribute("bypass-x-frame");
-
-    frame.src = bypassAPILink + link;
 
     //var x = document.getElementById("myframe");
     //windowElement.onload = function () {
@@ -146,6 +143,10 @@ addWindowButton.addEventListener('click', function () {
     const textBoxValue = document.getElementById('textBox').value;
     const baseUrl = textBoxValue.replace(/^https:\/\//, "").replace(/\/$/, "");
     createWindow(`${textBoxValue}`, `???`);
+});
+
+PT.addEventListener('click', function () {
+  if (Proxy===false){PT.style.backgroundColor="rgba(0, 255, 0, 0.5)"; Proxy=true; PT.innerText="Proxy: On"}else{PT.style.backgroundColor="rgba(255, 0, 0, 0.5)"; Proxy=false; PT.innerText="Proxy: Off";}
 });
 
 var script = document.createElement('script'); script.src="https://cdn.jsdelivr.net/npm/eruda"; document.body.append(script); script.onload = function () { eruda.init(); }
