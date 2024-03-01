@@ -3,6 +3,15 @@ let windows = document.getElementById('windows');
 let tabsHolder = document.getElementById('tabsHolder');
 let addWindowButton = document.getElementById('addWindow');
 
+const iFrames = [...document.querySelectorAll("iframe[bypass-x-frame]")];
+const bypassAPILink = "https://basicscript.glitch.me/bypass/";
+
+iFrames.forEach(async (frame) => {
+    let link = frame.getAttribute("bypass-x-frame");
+
+    frame.src = bypassAPILink + link;
+});
+
 function createWindow(Src, Title) {
     let windowElement = document.createElement('div');
     windowElement.className = 'window';
@@ -26,13 +35,18 @@ function createWindow(Src, Title) {
 
     windowElement.appendChild(topbar);
 
-    windowElement.innerHTML += `<iframe id="myframe" src="${Src}"></iframe>`
 
     windows.appendChild(windowElement);
 
     makeDraggable(windowElement);
     setupWindowButtons(windowElement);
     setupWindowTabs(windowElement, Title);
+
+    windowElement.innerHTML += `<iframe id="myframe" bypass-x-frame="${Src}"></iframe>`
+    const frame = document.getElementById("myframe")
+    let link = frame.getAttribute("bypass-x-frame");
+
+    frame.src = bypassAPILink + link;
 
     //var x = document.getElementById("myframe");
     //windowElement.onload = function () {
