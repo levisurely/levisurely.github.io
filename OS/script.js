@@ -38,9 +38,9 @@ function createWindow(Src, Title) {
 
     windowElement.appendChild(topbar);
     if (Proxy == true) {
-        windowElement.innerHTML += `<iframe id="myframe" src="${bypassAPILink + Src}"></iframe>`
+        windowElement.innerHTML += `<iframe id="myframe" onLoad="this.Src=bypassAPILink+this.contentWindow.location" src="${bypassAPILink + Src}"></iframe>`
     } else {
-        windowElement.innerHTML += `<iframe id="myframe" onLoad="console.log(this.contentWindow.location);" src="${Src}"></iframe>`
+        windowElement.innerHTML += `<iframe id="myframe" src="${Src}"></iframe>`
     }
     windows.appendChild(windowElement);
 
