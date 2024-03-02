@@ -2,6 +2,7 @@ let zIndex = 1;
 let windows = document.getElementById('windows');
 let tabsHolder = document.getElementById('tabsHolder');
 let PT = document.getElementById('toggle');
+let TT = document.getElementById('theme');
 let addWindowButton = document.getElementById('addWindow');
 var Proxy = false;
 
@@ -36,16 +37,20 @@ function createWindow(Src, Title) {
   `;
 
     windowElement.appendChild(topbar);
-if (Proxy==true){
-    windowElement.innerHTML += `<iframe id="myframe" src="${bypassAPILink+Src}"></iframe>`
-}else{windowElement.innerHTML += `<iframe id="myframe" src="${Src}"></iframe>`}
+    if (Proxy == true) {
+        windowElement.innerHTML += `<iframe id="myframe" src="${bypassAPILink + Src}"></iframe>`
+    } else {
+        windowElement.innerHTML += `<iframe id="myframe" onLoad="console.log(this.contentWindow.location);" src="${Src}"></iframe>`
+    }
     windows.appendChild(windowElement);
 
     makeDraggable(windowElement);
     setupWindowButtons(windowElement);
     setupWindowTabs(windowElement, Title);
 
-    //var x = document.getElementById("myframe");
+    var x = document.getElementById("myframe");
+
+    x.addEventListener('load', function () { console.log(this.contentWindow.location); });
     //windowElement.onload = function () {
     //var y = x.contentDocument;
     //alert(y.body)
@@ -146,7 +151,75 @@ addWindowButton.addEventListener('click', function () {
 });
 
 PT.addEventListener('click', function () {
-  if (Proxy===false){PT.style.backgroundColor="rgba(0, 255, 0, 0.5)"; Proxy=true; PT.innerText="Proxy: On"}else{PT.style.backgroundColor="rgba(255, 0, 0, 0.5)"; Proxy=false; PT.innerText="Proxy: Off";}
+    if (Proxy === false) { PT.style.backgroundColor = "rgba(0, 255, 0, 0.5)"; Proxy = true; PT.innerText = "Proxy: On" } else { PT.style.backgroundColor = "rgba(255, 0, 0, 0.5)"; Proxy = false; PT.innerText = "Proxy: Off"; }
 });
 
-var script = document.createElement('script'); script.src="https://cdn.jsdelivr.net/npm/eruda"; document.body.append(script); script.onload = function () { eruda.init(); }
+let savedSettings = JSON.parse(localStorage.getItem("settings")) || {};
+var backgroundColorInput = savedSettings.backgroundColor || "#ffffff";
+var backgroundImageURLInput = savedSettings.backgroundImageURL || "";
+var backgroundImageFileInput = "";
+var backgroundImageTransparencyInput = savedSettings.backgroundImageTransparency || "1";
+
+// Apply settings function
+function applySettings() {
+    // Dark mode
+    const darkModeEnabled = savedSettings.darkMode || false;
+    const stylesheet = document.getElementById("stylesheet");
+    stylesheet.href = darkModeEnabled ? "dark.css" : "light.css";
+    TT.innerText = darkModeEnabled ? "Theme: Dark" : "Theme: Light";
+    savedSettings.darkMode = darkModeEnabled;
+
+    // Background color
+    const backgroundColor = backgroundColorInput;
+    document.body.style.backgroundColor = backgroundColor;
+    savedSettings.backgroundColor = backgroundColor;
+
+    // Background image
+    if (backgroundImageURLInput) {
+        const backgroundImageURL = backgroundImageURLInput;
+        document.body.style.backgroundImage = `url("${backgroundImageURL}")`;
+        savedSettings.backgroundImageURL = backgroundImageURL;
+    }
+
+    // Background image transparency
+    const transparency = backgroundImageTransparencyInput;
+    document.body.style.opacity = transparency;
+    savedSettings.backgroundImageTransparency = transparency;
+}
+
+TT.addEventListener('click', function () {
+    if (savedSettings.darkMode === true) {
+        savedSettings.darkMode = false;
+        TT.innerText = "Theme: Light";
+
+    } else {
+        savedSettings.darkMode = true;
+        TT.innerText = "Theme: Dark";
+
+    }
+    localStorage.setItem("settings", JSON.stringify(savedSettings));
+    applySettings();
+});
+
+var script = document.createElement('script'); script.src = "https://cdn.jsdelivr.net/npm/eruda"; document.body.append(script); script.onload = function () { eruda.init(); }
+
+document.addEventListener("DOMContentLoaded", function () {
+
+    // Apply settings on page load
+    applySettings();
+});
+
+function checkCookie() {
+    var cookieName = "accessKey";
+    var keyPage = "../Key";;
+
+    if (document.cookie.indexOf(cookieName) >= 0) {
+        // Cookie exists, redirect to the main page
+        //window.location.href = "main";
+    } else {
+        // Cookie does not exist, redirect to the key page
+        window.location.href = keyPage;
+    }
+}
+
+window.onload = checkCookie;

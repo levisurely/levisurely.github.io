@@ -1,0 +1,166 @@
+body {
+    font-family: 'PT Sans', sans-serif;
+    background-color: white; /* Changed to white for light mode */
+    background-repeat: no-repeat;
+    background-size: 100%;
+    background-image: url("https://preview.redd.it/blackholes-v0-divlz6nawa7c1.png?auto=webp&s=cd02710056888b3d570bba9762f9af8e75b3d961");
+  }
+  
+  iframe {
+    position: fixed;
+    padding-bottom: 100px;
+    backdrop-filter: blur(10px);
+    position: absolute;
+    border: 1px solid #ccc;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    background-color: rgba(255, 255, 255, 0.5); /* Changed to white with transparency */
+    border-radius: 5px;
+    z-index: 1;
+  }
+  
+  input[type="text"] {
+    padding: 5px;
+    font-size: 16px;
+  }
+  
+  .window {
+    resize: both;
+    overflow: auto;
+    backdrop-filter: blur(10px);
+    position: absolute;
+    border: 1px solid #ccc;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    background-color: rgba(255, 255, 255, 0.5); /* Changed to white with transparency */
+    border-radius: 5px;
+    z-index: 1;
+  }
+  
+  .topbar {
+    z-index: 2;
+    display: flex;
+    backdrop-filter: blur(10px);
+    justify-content: flex-end;
+    align-items: center;
+    background-color: rgba(255, 255, 255, 0.5); /* Changed to white with transparency */
+    padding: 5px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    cursor: move;
+  }
+  
+  .title {
+    color: black; /* Changed text color to black for better readability */
+    margin-right: auto;
+    margin-left: 10px;
+  }
+  
+  .buttons {
+    margin-right: 10px;
+  }
+  
+  .buttons button {
+    color: black; /* Changed button text color to black */
+    background: transparent;
+    border: none;
+    font-size: 16px;
+    cursor: pointer;
+  }
+  
+  .close:hover {
+    color: red;
+  }
+  
+  .minimize:hover {
+    color: green;
+  }
+  
+  .maximize:hover {
+    color: yellow;
+  }
+  
+  iframe {
+    z-index: 1;
+    border: none;
+    width: 100%;
+    height: 100%;
+  }
+  
+  #toggle {
+    display: inline-block;
+    margin-right: 5px;
+    color: #000;
+    backdrop-filter: blur(10px);
+    background-color: rgba(255, 0, 0, 0.5);
+    padding: 5px;
+    border-style: none;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  }
+  
+  #addWindow {
+    display: inline-block;
+    margin-right: 5px;
+    color: #000; /* Changed addWindow color to black */
+    backdrop-filter: blur(10px);
+    background-color: rgba(255, 255, 255, 0.5); /* Changed addWindow background color to blue with transparency */
+    padding: 5px;
+    border-style: none;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  }
+  
+  #theme {
+    display: inline-block;
+    margin-right: 5px;
+    color: #000000;
+    backdrop-filter: blur(10px);
+    background-color: rgba(255, 255, 255, 0.5);
+    padding: 5px;
+    border-style: none;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  }
+
+  ::placeholder {
+    color: rgba(0, 0, 0, 0.5);
+    opacity: 1; /* Firefox */
+  }
+  
+  #textBox {
+    display: inline-block;
+    margin-right: 5px;
+    color: #000000;
+    backdrop-filter: blur(10px);
+    
+    background-color: rgba(255, 255, 255, 0.5);
+    padding: 5px;
+    border-style: none;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  }
+  
+  #tabsHolder {
+    position: fixed;
+    top: 10px;
+    right: 10px;
+    background-color: rgba(255, 255, 255, 0.5);
+    padding: 5px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  }
+
+  .tab {
+    display: inline-block;
+    margin-right: 5px;
+    color: #fff;
+    cursor: pointer;
+    backdrop-filter: blur(10px);
+    background-color: rgba(255, 255, 255, 0.5);
+    padding: 5px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  }
+  
+  .tab:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+  }
