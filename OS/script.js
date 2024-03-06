@@ -47,15 +47,6 @@ function createWindow(Src, Title) {
     makeDraggable(windowElement);
     setupWindowButtons(windowElement);
     setupWindowTabs(windowElement, Title);
-
-    var x = document.getElementById("myframe");
-
-    x.addEventListener('load', function () { console.log(this.contentWindow.location); });
-    //windowElement.onload = function () {
-    //var y = x.contentDocument;
-    //alert(y.body)
-    //y.body.style.backgroundColor = "red";
-    //}
 }
 
 function makeDraggable(element) {
