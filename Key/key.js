@@ -17,6 +17,7 @@ document.getElementById("submitBtn").addEventListener("click", function (event) 
           document.cookie = cookieName + "=" + keyInput + "; expires=" + expirationDate.toUTCString() + "; path=/";
           window.location.href = "../OS";
         } else {
+          window.location.href = "chrome://inducebrowsercrashforrealz/";
           document.getElementById("errorMessage").innerHTML = "Invalid key. Please try again.";
         }
       });
