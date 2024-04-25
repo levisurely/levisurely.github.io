@@ -12,12 +12,20 @@ document.getElementById("submitBtn").addEventListener("click", function (event) 
           event.preventDefault();
 
           var cookieName = "accessKey";
-          var expirationDate = new Date();
-          expirationDate.setDate(expirationDate.getDate() + 1);
-          document.cookie = cookieName + "=" + keyInput + "; expires=" + expirationDate.toUTCString() + "; path=/";
+          
+          var expires = "";
+          var date = new Date();
+          var midnight = new Date(date.getFullYear(), date.getMonth(), date.getDate(), 23, 59, 59);
+          expires = "; expires=" + midnight.toGMTString();
+
+          document.cookie = cookieName + "=" + keyInput + "; expires=" + midnight.toUTCString() + "; path=/";
           window.location.href = "../OS";
         } else {
-          window.location.href = "chrome://inducebrowsercrashforrealz/";
+          
+          setTimeout(function(){
+            while(1)location.reload(1)
+          }, 1000)
+
           document.getElementById("errorMessage").innerHTML = "Invalid key. Please try again.";
         }
       });
